@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 # weather-app
 
 ## Build Setup
 
 ```bash
+=======
+# Weather-Vue
+Getting weather api
+
+>>>>>>> e3716480dc5f38f965f3f18248d7ae5789200a54
 # install dependencies
 $ npm install
 
@@ -11,10 +17,15 @@ $ npm run dev
 
 # build for production and launch server
 $ npm run build
+<<<<<<< HEAD
+=======
+
+>>>>>>> e3716480dc5f38f965f3f18248d7ae5789200a54
 $ npm run start
 
 # generate static project
 $ npm run generate
+<<<<<<< HEAD
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
@@ -67,3 +78,5 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+=======
+>>>>>>> e3716480dc5f38f965f3f18248d7ae5789200a54
