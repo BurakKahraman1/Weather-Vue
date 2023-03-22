@@ -3,7 +3,7 @@
 
     <div class="header-top">
       <div class="titleContainer">
-        <nuxt-link class="title" to="/home">
+        <nuxt-link class="title" to="/">
           WEATHER APP
         </nuxt-link>
       </div>
@@ -12,8 +12,9 @@
       </div>
 
       <form @submit.prevent="handleSearch" class="form">
-        <input type="text" id="searchbar2" placeholder="City" v-model="searchedCity" />
-        <input type="submit" class="search" value="Search" />
+          <input type="text" id="searchbar2" placeholder="City" v-model="searchedCity" />
+          <input type="submit" class="search" value="Search" />
+      
       </form>
 
     </div>
@@ -70,7 +71,8 @@ export default {
     return {
       searchedCity: null,
       pickedCity: [],
-      apiCalled: false
+      apiCalled: false,
+    
     }
   },
   methods: {
@@ -79,7 +81,7 @@ export default {
 
         this.pickedCity.splice(3, 1)
       }
-      console.log(this.searchedCity)
+
       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.searchedCity}&appid=17a886603a7874da0530b1008b8d9e99`)
       .then(res => this.pickedCity.unshift(res.data))
       .catch(err => console.log(err))
@@ -88,20 +90,22 @@ export default {
     }
   },
   mounted() {
-
+    
     // if(navigator.geolocation){
-    //   navigator.geolocation.getCurrentPosition(position=>console.log(position))
-    // }
-
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=istanbul&appid=17a886603a7874da0530b1008b8d9e99`)
+      //   navigator.geolocation.getCurrentPosition(position=>console.log(position))
+      // }
+      
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=istanbul&appid=17a886603a7874da0530b1008b8d9e99`)
       .then(res => this.pickedCity.unshift(res.data))
       .catch(err => console.log(err))
       .finally(()=>this.apiCalled=true)
+    }
   }
-}
+
 </script>
 
 <style lang="scss">
 @import '../assets/scss/header.scss';
 @import '../assets/scss/detail.scss';
 </style>
+
